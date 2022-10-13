@@ -12,6 +12,8 @@ ARG ONNXRUNTIME_BRANCH=main
 
 WORKDIR /code
 
+RUN pip install cmake --upgrade
+
 # Prepare onnxruntime repository & build onnxruntime
 RUN git clone --single-branch --branch ${ONNXRUNTIME_BRANCH} --recursive ${ONNXRUNTIME_REPO} onnxruntime &&\
     cd onnxruntime &&\
